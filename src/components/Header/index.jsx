@@ -7,17 +7,17 @@ export default function Header() {
         <Logo />
         <ul className="flex items-center gap-x-4 font-bold text-zinc-400 ">
           <li>
-            <a href="/" className="hover:text-gray-500 hover:underline">
+            <a href="/" className="hover:text-gray-700 hover:underline">
               Features
             </a>
           </li>
           <li>
-            <a href="/" className="hover:text-gray-500 hover:underline">
+            <a href="/" className="hover:text-gray-700 hover:underline">
               Pricing
             </a>
           </li>
           <li>
-            <a href="/" className="hover:text-gray-500 hover:underline">
+            <a href="/" className="hover:text-gray-700 hover:underline">
               Resources
             </a>
           </li>
