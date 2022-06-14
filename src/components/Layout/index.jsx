@@ -1,3 +1,4 @@
+import { Details } from "../Details";
 import Header from "../Header";
 import { Main } from "../Main";
 import { ShortenLink } from "../Shorten";
@@ -10,13 +11,14 @@ export default function Layout() {
         <Header />
         <Main />
       </section>
-      <section className="h-auto overflow-x-hidden bg-gray-100 pb-8">
+      <section className="h-auto overflow-x-hidden bg-gray-100 pb-32">
         <div className="w-5/6 mx-auto">
           <ShortenLink />
           <ShortenedLink />
           <ShortenedLink />
           <ShortenedLink />
         </div>
+        <Details />
       </section>
     </>
   );
