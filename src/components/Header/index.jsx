@@ -32,7 +32,7 @@ export default function Header() {
         </Button>
         <Button
           type="button"
-          className="bg-teal-500 font-bold text-white rounded-3xl px-6 py-1 h-10 hover:bg-teal-600 active:bg-teal-700 focus:outline-none focus:ring focus:ring-teal-500 focus:shadow-outline-teal"
+          className="bg-teal-500 font-bold text-white rounded-3xl px-6 py-1 h-10 hover:opacity-70 active:bg-teal-700 focus:outline-none focus:ring focus:ring-teal-500 focus:shadow-outline-teal"
         >
           Sign Up
         </Button>
