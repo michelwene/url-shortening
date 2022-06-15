@@ -1,6 +1,7 @@
 import { Details } from "../Details";
 import Header from "../Header";
 import { Main } from "../Main";
+import { Promotion } from "../Promotion";
 import { ShortenLink } from "../Shorten";
 import { ShortenedLink } from "../Shorten/Shortened-Link";
 
@@ -20,6 +21,7 @@ export default function Layout() {
         </div>
         <Details />
       </section>
+      <Promotion />
     </>
   );
 }
