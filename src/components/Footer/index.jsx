@@ -15,26 +15,46 @@ export function Footer() {
           <div>
             <h5 className="font-bold mb-4">Features</h5>
             <div className="flex flex-col gap-y-2">
-              <a>Link Shortening</a>
-              <a>Branded Links</a>
-              <a>Analytics</a>
+              <a href="/" className="hover:text-teal-500">
+                Link Shortening
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Branded Links
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Analytics
+              </a>
             </div>
           </div>
           <div>
             <h5 className="font-bold mb-4">Resources</h5>
             <div className="flex flex-col gap-y-2">
-              <a>Blog</a>
-              <a>Developers</a>
-              <a>Support</a>
+              <a href="/" className="hover:text-teal-500">
+                Blog
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Developers
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Support
+              </a>
             </div>
           </div>
           <div>
             <h5 className="font-bold mb-4">Company</h5>
             <div className="flex flex-col gap-y-2">
-              <a>About</a>
-              <a>Our Team</a>
-              <a>Careers</a>
-              <a>Contact</a>
+              <a href="/" className="hover:text-teal-500">
+                About
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Our Team
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Careers
+              </a>
+              <a href="/" className="hover:text-teal-500">
+                Contact
+              </a>
             </div>
           </div>
         </div>
