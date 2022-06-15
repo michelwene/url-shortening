@@ -18,7 +18,7 @@ export function ShortenedLink({ originalLink }) {
   }, [copied]);
 
   return (
-    <div className="w-full  mt-6">
+    <div className="w-full  mt-4">
       <div className="flex items-center justify-between bg-white py-4 px-6 rounded-md">
         <div>
           <p className="text-zinc-600 font-bold">

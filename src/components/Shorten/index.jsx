@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../Button";
 import { ShortenedLink } from "./Shortened-Link";
 import { api } from "../../services/api";
@@ -7,6 +7,7 @@ export function ShortenLink() {
   const [link, setLink] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [shortenedLink, setshortenedLink] = useState([]);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async () => {
     try {
@@ -14,10 +15,15 @@ export function ShortenLink() {
       const { data } = await api.get(`/shorten?url=${link}`);
 
       setshortenedLink((prevState) => [...prevState, data.result]);
+      setError(null);
+      setLink("");
     } catch (err) {
-      console.log(err);
+      setError(err.message);
     } finally {
       setIsLoading(false);
+      setTimeout(() => {
+        setError(null);
+      }, 3000);
     }
   };
   const newShortenedLink = shortenedLink.filter(
@@ -29,6 +35,15 @@ export function ShortenLink() {
           elem.original_link === element.original_link
       )
   );
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("newShortenedLink"));
+    if (items) {
+      setshortenedLink(items);
+    }
+  }, []);
+
+  localStorage.setItem("newShortenedLink", JSON.stringify(newShortenedLink));
   return (
     <>
       <div className=" h-32 mx-auto bg-[url('/public/images/bg-shorten-desktop.svg')] bg-no-repeat bg-center bg-cover bg-[#3A3054] rounded-md">
@@ -38,6 +53,7 @@ export function ShortenLink() {
             className="flex-1 h-12 rounded-md px-4  placeholder:text-zinc-400 focus:outline-none focus:ring focus:rign-purple-500 focus:shadow-outline-purple"
             placeholder="Shorten a link here..."
             onChange={(e) => setLink(e.target.value)}
+            value={link}
           />
           <Button
             onClick={() => handleSubmit()}
@@ -48,6 +64,11 @@ export function ShortenLink() {
             {isLoading ? "Shortening..." : "Shorten"}
           </Button>
         </div>
+        {error && (
+          <p className="text-red-500 text-center font-bold">
+            Erro ao encurtar o link, digite novamente!
+          </p>
+        )}
       </div>
       {newShortenedLink?.map((link) => (
         <ShortenedLink originalLink={link} key={link.code} />
