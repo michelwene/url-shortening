@@ -5,15 +5,19 @@ import { api } from "../../services/api";
 
 export function ShortenLink() {
   const [link, setLink] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [shortenedLink, setshortenedLink] = useState([]);
 
   const handleSubmit = async () => {
     try {
+      setIsLoading(true);
       const { data } = await api.get(`/shorten?url=${link}`);
 
       setshortenedLink((prevState) => [...prevState, data.result]);
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   };
   const newShortenedLink = shortenedLink.filter(
@@ -40,7 +44,7 @@ export function ShortenLink() {
             type="submit"
             className="h-12 px-8 py-2.5 bg-teal-500 text-white rounded-md font-bold hover:opacity-70 active:bg-teal-700 focus:outline-none focus:ring focus:rign-teal-700 focus:shadow-outline-teal"
           >
-            Shorten It!
+            {isLoading ? "Shortening..." : "Shorten"}
           </Button>
         </div>
       </div>
