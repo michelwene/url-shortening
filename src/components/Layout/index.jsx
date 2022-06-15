@@ -1,4 +1,5 @@
 import { Details } from "../Details";
+import { Footer } from "../Footer";
 import Header from "../Header";
 import { Main } from "../Main";
 import { Promotion } from "../Promotion";
@@ -22,6 +23,7 @@ export default function Layout() {
         <Details />
       </section>
       <Promotion />
+      <Footer />
     </>
   );
 }
