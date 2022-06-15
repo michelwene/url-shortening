@@ -14,7 +14,7 @@ export function ShortenedLink({ originalLink }) {
       if (copied) {
         setCopied(false);
       }
-    }, 3000);
+    }, 1000);
   }, [copied]);
 
   return (

@@ -42,7 +42,8 @@ export function ShortenLink() {
           <Button
             onClick={() => handleSubmit()}
             type="submit"
-            className="h-12 px-8 py-2.5 bg-teal-500 text-white rounded-md font-bold hover:opacity-70 active:bg-teal-700 focus:outline-none focus:ring focus:rign-teal-700 focus:shadow-outline-teal"
+            className="h-12 px-8 py-2.5 bg-teal-500 text-white rounded-md font-bold hover:opacity-70 active:bg-teal-700 focus:outline-none focus:ring focus:rign-teal-700 focus:shadow-outline-teal disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isLoading || link === ""}
           >
             {isLoading ? "Shortening..." : "Shorten"}
           </Button>
