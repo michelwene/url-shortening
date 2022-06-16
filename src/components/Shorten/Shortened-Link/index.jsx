@@ -18,8 +18,8 @@ export function ShortenedLink({ originalLink }) {
   }, [copied]);
 
   return (
-    <div className="w-full  mt-4">
-      <div className="flex items-center justify-between bg-white py-4 px-6 rounded-md">
+    <div className="w-full  mt-4 sm:h-auto">
+      <div className="flex items-center justify-between bg-white py-4 px-6 sm:px-2 md:px-6 rounded-md sm:flex-col md:flex-row sm:gap-y-4 md:gap-y-0">
         <div>
           <p className="text-zinc-600 font-bold">
             {originalLink.original_link}
@@ -35,13 +35,13 @@ export function ShortenedLink({ originalLink }) {
             {originalLink.full_short_link}
           </a>
           {copied ? (
-            <Button className="text-white font-bold bg-[#3A3054] py-2 px-8 rounded-md cursor-not-allowed ">
+            <Button className="text-white font-bold bg-[#3A3054] py-2 sm:px-2 md:px-8 rounded-md cursor-not-allowed ">
               Copied!
             </Button>
           ) : (
             <Button
               onClick={copyText}
-              className="text-white font-bold bg-teal-400 py-2 px-8 rounded-md hover:opacity-70 active:bg-teal-700 focus:outline-none focus:ring focus:rign-teal-700 focus:shadow-outline-teal"
+              className="text-white font-bold bg-teal-400 py-2 sm:px-4 md:px-8 rounded-md hover:opacity-70 active:bg-teal-700 focus:outline-none focus:ring focus:rign-teal-700 focus:shadow-outline-teal"
             >
               Copy
             </Button>

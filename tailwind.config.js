@@ -7,6 +7,9 @@ module.exports = {
         sans: ["Poppins", "sans-serif"],
         serif: ["Poppins", "serif"],
       },
+      screens: {
+        sm: "320px",
+      },
     },
   },
   plugins: [],

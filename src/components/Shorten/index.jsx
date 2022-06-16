@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "../Button";
 import { ShortenedLink } from "./Shortened-Link";
 import { api } from "../../services/api";
@@ -26,6 +26,7 @@ export function ShortenLink() {
       }, 3000);
     }
   };
+
   const newShortenedLink = shortenedLink.filter(
     (element, index) =>
       index ===
@@ -35,22 +36,13 @@ export function ShortenLink() {
           elem.original_link === element.original_link
       )
   );
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("newShortenedLink"));
-    if (items) {
-      setshortenedLink(items);
-    }
-  }, []);
-
-  localStorage.setItem("newShortenedLink", JSON.stringify(newShortenedLink));
   return (
     <>
       <div className=" h-32 mx-auto bg-[url('/public/images/bg-shorten-desktop.svg')] bg-no-repeat bg-center bg-cover bg-[#3A3054] rounded-md">
-        <div className="w-4/5 h-full mx-auto flex items-center justify-center gap-x-4">
+        <div className=" sm:w-full md:w-4/5 h-full mx-auto flex items-center justify-center gap-x-4 sm:flex-col md:flex-row sm:gap-y-4 md:gap-y-0">
           <input
             type="text"
-            className="flex-1 h-12 rounded-md px-4  placeholder:text-zinc-400 focus:outline-none focus:ring focus:rign-purple-500 focus:shadow-outline-purple"
+            className="md:flex-1 h-12 rounded-md px-4 sm:w-11/12 md:w-full placeholder:text-zinc-400 focus:outline-none focus:ring focus:rign-purple-500 focus:shadow-outline-purple"
             placeholder="Shorten a link here..."
             onChange={(e) => setLink(e.target.value)}
             value={link}
