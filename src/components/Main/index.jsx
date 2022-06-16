@@ -1,4 +1,3 @@
-import { IconWorking } from "../../assets/icons";
 import { Button } from "../Button";
 
 export function Main() {
